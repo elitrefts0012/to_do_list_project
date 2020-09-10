@@ -1,0 +1,9 @@
+FROM node:10
+
+RUN mkdir /app
+
+# lockfile will be overridden when we volume things in later
+ADD ./src/frontend/package.json /app/.
+ADD ./src/frontend/package-lock.json /app/.
+WORKDIR /app
+RUN npm install

@@ -1,0 +1,35 @@
+{
+  "name": "to_do_list_project",
+  "scripts": {
+    "postdeploy": "bin/heroku/setup",
+    "pr-predestroy": "bin/heroku/teardown"
+  },
+  "env": {
+    "HEROKU_APP_NAME": {
+      "required": true
+    },
+    "DJANGO_SETTINGS_MODULE": {
+      "required": true
+    },
+    "NODE_ENV": "production"
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "sendgrid:starter",
+    "cloudcube:free"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "heroku-18"
+}
