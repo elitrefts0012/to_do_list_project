@@ -82,7 +82,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-SECRET_KEY = os.environ.get("SECRET_KEY", '&qxzaox02i=h!@+ai#p^wj6#(ddp@pq(!iyazh%)h-!ncwvtxl')
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND', 'django.core.mail.backends.console.EmailBackend')
 
